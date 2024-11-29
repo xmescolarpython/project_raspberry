@@ -2,7 +2,7 @@ import time
 import Adafruit_ADS1x15
 
 # Crear una instància del ADC ADS1115
-ADC = Adafruit_ADS1x15.ADS1115()
+ADC = Adafruit_ADS1x15.ADS1115(busnum = 1)
 
 # Adreça I2C del ADS1115 (per defecte 0x48)
 ADS1115_ADDRESS = 0x48
@@ -20,7 +20,7 @@ MAX_ADC_VALUE_WATER = 26068  # Valor màxim submergit en aigua
 
 # Calibració del sensor d'humitat de terra
 MIN_ADC_VALUE_SOIL = 0      # Valor mínim en condicions seques
-MAX_ADC_VALUE_SOIL = 300    # Valor màxim en condicions humides
+MAX_ADC_VALUE_SOIL = 25500    # Valor màxim en condicions humides
 
 def llegir_percentatge(adc_value, min_val, max_val):
     """
